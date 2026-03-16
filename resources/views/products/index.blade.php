@@ -10,7 +10,10 @@
             <div class="grid grid-cols-3 gap-4">
                 @foreach ($products as $product)
                     <div class="bg-white p-6 rounded-lg shadow">
-                        <h3 class="text-lg font-bold">{{ $product->name }}</h3>
+                        <a href="{{ route('products.show', $product->id) }}"
+                            class="text-indigo-600 hover:text-indigo-900">
+                            {{ $product->name }}
+                        </a>
                         <p class="text-gray-600">{{ $product->description }}</p>
                         <p class="mt-2 text-blue-600 font-bold">{{ number_format($product->price) }}円</p>
                     </div>
